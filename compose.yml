@@ -1,0 +1,30 @@
+services:
+  web1:
+    image: arshad4doc/web1_repo:v1
+    container_name: web1_compose
+    ports:
+      - "8081:80"
+    volumes:
+      - web1_data:/usr/share/nginx/html
+    networks:
+      - web-network
+    restart: unless-stopped
+
+  web2:
+    image: arshad4doc/web2_repo:v1
+    container_name: web2_compose
+    ports:
+      - "8082:80"
+    volumes:
+      - web2_data:/usr/share/nginx/html
+    networks:
+      - web-network
+    restart: unless-stopped
+
+volumes:
+  web1_data:
+  web2_data:
+
+networks:
+  web-network:
+    driver: bridge

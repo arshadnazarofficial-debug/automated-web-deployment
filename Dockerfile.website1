@@ -1,0 +1,6 @@
+FROM nginx:alpine
+
+COPY web1/index.html /usr/share/nginx/html/index.html
+COPY web1/style.css /usr/share/nginx/html/style.css
+
+EXPOSE 80

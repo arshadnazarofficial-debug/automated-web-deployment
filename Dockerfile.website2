@@ -1,0 +1,6 @@
+FROM nginx:alpine
+
+COPY web2/index.html /usr/share/nginx/html/index.html
+COPY web2/style.css /usr/share/nginx/html/style.css
+
+EXPOSE 80
